@@ -39,47 +39,42 @@ HỆ THỐNG QUẢN LÝ VÀ ĐIỂM DANH SINH VIÊN </h1>
 ## 📂 Cấu trúc dự án
 
 📦 BTL_IOT
-├── 📂 face-recognition-attendance # Thư mục chính của hệ thống điểm danh nhận diện khuôn mặt
-│ ├── 📂 backend # Backend xử lý dữ liệu và logic
-│ │ ├── 📂 dataset # Dữ liệu khuôn mặt sinh viên
-│ │ │ ├── CNTT 16-05/
-│ │ │ ├── domo_/
-│ │ │ ├── HAN 16-03/
-│ │ ├── 📂 sound # Âm thanh thông báo điểm danh
-│ │ │ ├── diemnanhthanhcong.mp3
-│ │ ├── app.py # API backend chính
-│ │ ├── package.json # Thông tin dependencies backend
-│ │ ├── temp.jpg # Ảnh tạm lưu xử lý nhận diện
+├── 📂 face-recognition-attendance       # Hệ thống điểm danh nhận diện khuôn mặt
+│   ├── 📂 backend                        # Backend xử lý dữ liệu và logic
+│   │   ├── 📂 dataset                    # Dữ liệu khuôn mặt sinh viên
+│   │   │   ├── CNTT 16-05/
+│   │   │   ├── HAN 16-03/
+│   │   ├── 📂 sound                      # Âm thanh thông báo điểm danh
+│   │   │   ├── diemnanhthanhcong.mp3
+│   │   ├── app.py                        # API backend chính
+│   │   ├── package.json                   # Thông tin dependencies backend
+│   │   ├── temp.jpg                       # Ảnh tạm lưu xử lý nhận diện
+│   │
+│   ├── 📂 frontend                        # Giao diện người dùng (React)
+│   │   ├── 📂 node_modules                # Thư viện phụ thuộc frontend
+│   │   ├── 📂 public                      # Tệp tĩnh của ứng dụng
+│   │   ├── 📂 src                         # Source code frontend
+│   │   │   ├── 📂 components              # Các component React
+│   │   │   │   ├── DsDiemDanh.js          # Danh sách điểm danh
+│   │   │   │   ├── StudentList.js         # Danh sách sinh viên
+│   │   │   │   ├── CameraComponent.js     # Xử lý camera
+│   │   │   │   ├── ManageStudents.js      # Quản lý sinh viên
+│   │   │   ├── App.js                     # Component chính của ứng dụng
+│   │   │   ├── index.js                   # Điểm vào chính của ứng dụng React
+│   │   │   ├── reportWebVitals.js         # Đánh giá hiệu suất ứng dụng
+│   │   │   ├── setupTests.js              # Cấu hình kiểm thử
+│   │   ├── .gitignore                      # File ignore của Git
+│   │   ├── package.json                    # Dependencies frontend
+│   │   ├── package-lock.json               # Khóa phiên bản dependencies
+│   │   ├── README.md                        # Tài liệu hướng dẫn sử dụng
 │
-├── 📂 frontend (face-recognition-frontend) # Giao diện người dùng
-│ ├── 📂 node_modules # Thư viện phụ thuộc của frontend
-│ ├── 📂 public # Tệp tĩnh của ứng dụng
-│ ├── 📂 src # Source code frontend
-│ │ ├── 📂 components # Các component React
-│ │ │ ├── DsDiemDanh.js # Danh sách điểm danh
-│ │ │ ├── DsDiemDanh.css
-│ │ │ ├── StudentList.js # Danh sách sinh viên
-│ │ │ ├── StudentList.css
-│ │ ├── App.js # Component chính của ứng dụng
-│ │ ├── App.css
-│ │ ├── App.test.js
-│ │ ├── AttendanceList.js # Danh sách điểm danh
-│ │ ├── CameraComponent.js # Component xử lý camera
-│ │ ├── index.js # Điểm vào chính của ứng dụng React
-│ │ ├── ManageStudents.js # Quản lý sinh viên
-│ │ ├── reportWebVitals.js
-│ │ ├── setupTests.js
-│ ├── .gitignore
-│ ├── package-lock.json
-│ ├── package.json # Thông tin dependencies frontend
-│ ├── README.md # Tài liệu hướng dẫn
-│
-├── 📂 venv # Môi trường ảo Python
-├── 📂 wsdl # Thư mục chứa các tệp WSDL (nếu có)
-├── IOT_NHOM_7.pptx # File báo cáo nhóm
-├── Nhóm 7 - movie.mov # Video trình bày dự án
-├── Nhóm 7 - powerpoint.pptx # Slide thuyết trình
-├── package.json
+├── 📂 venv                                # Môi trường ảo Python
+├── 📂 wsdl                                # Chứa các tệp WSDL (nếu có)
+├── 📄 IOT_NHOM_7.pptx                     # File báo cáo nhóm
+├── 📄 Nhóm 7 - movie.mov                   # Video trình bày dự án
+├── 📄 Nhóm 7 - powerpoint.pptx              # Slide thuyết trình
+├── 📄 package.json                         # Thông tin dependencies chung
+
 
 ---
 
