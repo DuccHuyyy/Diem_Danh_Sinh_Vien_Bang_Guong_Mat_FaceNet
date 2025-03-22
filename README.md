@@ -41,31 +41,57 @@ HỆ THỐNG QUẢN LÝ VÀ ĐIỂM DANH SINH VIÊN </h1>
 📦 BTL_IOT
 
 ├── 📂 face-recognition-attendance       # Hệ thống điểm danh nhận diện khuôn mặt
+
 │   ├── 📂 backend                        # Backend xử lý dữ liệu và logic
+
 │   │   ├── 📂 dataset                    # Dữ liệu khuôn mặt sinh viên
+
 │   │   │   ├── CNTT 16-05/
+
 │   │   │   ├── HAN 16-03/
+
 │   │   ├── 📂 sound                      # Âm thanh thông báo điểm danh
+
 │   │   ├── app.py                        # API backend chính
+
 │   │   ├── temp.jpg                       # Ảnh tạm lưu xử lý nhận diện
+
 │   │
+
 │   ├── 📂 frontend                        # Giao diện người dùng (React)
+
 │   │   ├── 📂 node_modules                # Thư viện phụ thuộc frontend
+
 │   │   ├── 📂 public                      # Tệp tĩnh của ứng dụng
+
 │   │   ├── 📂 src                         # Source code frontend
+
 │   │   │   ├── 📂 components              # Các component React
+
 │   │   │   │   ├── DsDiemDanh.js          # Danh sách điểm danh
+
 │   │   │   │   ├── StudentList.js         # Danh sách sinh viên
+
 │   │   │   │   ├── CameraComponent.js     # Xử lý camera
+
 │   │   │   │   ├── ManageStudents.js      # Quản lý sinh viên
+
 │   │   │   ├── App.js                     # Component chính của ứng dụng
+
 │   │   │   ├── index.js                   # Điểm vào chính của ứng dụng React
+
 │   │   │   ├── setupTests.js              # Cấu hình kiểm thử
+
 │   │   ├── package.json                    # Dependencies frontend
+
 │   │   ├── package-lock.json               # Khóa phiên bản dependencies
+
 │
+
 ├── 📂 venv                                # Môi trường ảo Python
+
 ├── 📄 package.json                         # Thông tin dependencies chung
+
 
 
 ---
