@@ -17,7 +17,7 @@ HỆ THỐNG QUẢN LÝ VÀ ĐIỂM DANH SINH VIÊN </h1>
 <h2 align="center">Ứng dụng công nghệ trong hệ thống quản lý và điểm danh sinh viên</h2>
 
 <p align="left">
-  Hệ thống điểm danh sinh viên bằng mã QR là một dự án tích hợp giữa phần cứng (Arduino) và phần mềm (Python) nhằm tự động hóa quá trình điểm danh. Dự án sử dụng mã QR để cho phép sinh viên điểm danh, đồng thời kết hợp với thông báo qua LED, còi và giọng nói để phản hồi kết quả điểm danh. Dữ liệu điểm danh được lưu trữ trong MongoDB và quản lý qua giao diện người dùng được xây dựng bằng Tkinter.
+  Hệ thống quản lý và điểm danh sinh viên sử dụng công nghệ nhận diện khuôn mặt và database SQL Server. Ứng dụng này cho phép giảng viên dễ dàng quản lý thông tin sinh viên, thực hiện điểm danh tự động và theo dõi lịch sử điểm danh qua giao diện người dùng thân thiện.
 </p>
 
 ---
@@ -38,15 +38,48 @@ HỆ THỐNG QUẢN LÝ VÀ ĐIỂM DANH SINH VIÊN </h1>
 ---
 ## 📂 Cấu trúc dự án
 
-📦 Project  
-├── 📂 AttendanceDB  # Thư mục chứa cơ sở dữ liệu MongoDB backup  
-├── 📂 ThongBao  
-│   ├── ThongBao.ino  # Mã nguồn Arduino điều khiển LED (xanh/đỏ) và còi  
-├── 📂 templates  
-│   ├── checkin_success.html  # Giao diện HTML thông báo điểm danh thành công  
-├── chuongTrinh.py  # Chương trình chính khởi động LED service, Tkinter UI  
-├── Diemdanh.py  # Giao diện quản lý lịch sử điểm danh, xuất CSV, kết nối MongoDB  
-├── TaoQR.py  # Tạo mã QR, gửi email, quản lý sinh viên, Flask server xử lý điểm danh  
+📦 BTL_IOT
+├── 📂 face-recognition-attendance # Thư mục chính của hệ thống điểm danh nhận diện khuôn mặt
+│ ├── 📂 backend # Backend xử lý dữ liệu và logic
+│ │ ├── 📂 dataset # Dữ liệu khuôn mặt sinh viên
+│ │ │ ├── CNTT 16-05/
+│ │ │ ├── domo_/
+│ │ │ ├── HAN 16-03/
+│ │ ├── 📂 sound # Âm thanh thông báo điểm danh
+│ │ │ ├── diemnanhthanhcong.mp3
+│ │ ├── app.py # API backend chính
+│ │ ├── package.json # Thông tin dependencies backend
+│ │ ├── temp.jpg # Ảnh tạm lưu xử lý nhận diện
+│
+├── 📂 frontend (face-recognition-frontend) # Giao diện người dùng
+│ ├── 📂 node_modules # Thư viện phụ thuộc của frontend
+│ ├── 📂 public # Tệp tĩnh của ứng dụng
+│ ├── 📂 src # Source code frontend
+│ │ ├── 📂 components # Các component React
+│ │ │ ├── DsDiemDanh.js # Danh sách điểm danh
+│ │ │ ├── DsDiemDanh.css
+│ │ │ ├── StudentList.js # Danh sách sinh viên
+│ │ │ ├── StudentList.css
+│ │ ├── App.js # Component chính của ứng dụng
+│ │ ├── App.css
+│ │ ├── App.test.js
+│ │ ├── AttendanceList.js # Danh sách điểm danh
+│ │ ├── CameraComponent.js # Component xử lý camera
+│ │ ├── index.js # Điểm vào chính của ứng dụng React
+│ │ ├── ManageStudents.js # Quản lý sinh viên
+│ │ ├── reportWebVitals.js
+│ │ ├── setupTests.js
+│ ├── .gitignore
+│ ├── package-lock.json
+│ ├── package.json # Thông tin dependencies frontend
+│ ├── README.md # Tài liệu hướng dẫn
+│
+├── 📂 venv # Môi trường ảo Python
+├── 📂 wsdl # Thư mục chứa các tệp WSDL (nếu có)
+├── IOT_NHOM_7.pptx # File báo cáo nhóm
+├── Nhóm 7 - movie.mov # Video trình bày dự án
+├── Nhóm 7 - powerpoint.pptx # Slide thuyết trình
+├── package.json
 
 ---
 
