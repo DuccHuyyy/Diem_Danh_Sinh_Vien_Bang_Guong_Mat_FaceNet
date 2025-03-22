@@ -45,9 +45,7 @@ HỆ THỐNG QUẢN LÝ VÀ ĐIỂM DANH SINH VIÊN </h1>
 │   │   │   ├── CNTT 16-05/
 │   │   │   ├── HAN 16-03/
 │   │   ├── 📂 sound                      # Âm thanh thông báo điểm danh
-│   │   │   ├── diemnanhthanhcong.mp3
 │   │   ├── app.py                        # API backend chính
-│   │   ├── package.json                   # Thông tin dependencies backend
 │   │   ├── temp.jpg                       # Ảnh tạm lưu xử lý nhận diện
 │   │
 │   ├── 📂 frontend                        # Giao diện người dùng (React)
@@ -61,18 +59,11 @@ HỆ THỐNG QUẢN LÝ VÀ ĐIỂM DANH SINH VIÊN </h1>
 │   │   │   │   ├── ManageStudents.js      # Quản lý sinh viên
 │   │   │   ├── App.js                     # Component chính của ứng dụng
 │   │   │   ├── index.js                   # Điểm vào chính của ứng dụng React
-│   │   │   ├── reportWebVitals.js         # Đánh giá hiệu suất ứng dụng
 │   │   │   ├── setupTests.js              # Cấu hình kiểm thử
-│   │   ├── .gitignore                      # File ignore của Git
 │   │   ├── package.json                    # Dependencies frontend
 │   │   ├── package-lock.json               # Khóa phiên bản dependencies
-│   │   ├── README.md                        # Tài liệu hướng dẫn sử dụng
 │
 ├── 📂 venv                                # Môi trường ảo Python
-├── 📂 wsdl                                # Chứa các tệp WSDL (nếu có)
-├── 📄 IOT_NHOM_7.pptx                     # File báo cáo nhóm
-├── 📄 Nhóm 7 - movie.mov                   # Video trình bày dự án
-├── 📄 Nhóm 7 - powerpoint.pptx              # Slide thuyết trình
 ├── 📄 package.json                         # Thông tin dependencies chung
 
 
