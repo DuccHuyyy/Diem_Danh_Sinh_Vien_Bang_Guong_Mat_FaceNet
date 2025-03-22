@@ -289,8 +289,8 @@ Dự án được phát triển bởi 4 thành viên:
 | Họ và Tên            | Vai trò                  |
 |----------------------|--------------------------|
 | Chu Văn Huy          | Phát triển toàn bộ mã nguồn, thiết kế cơ sở dữ liệu, kiểm thử, triển khai dự án và thực hiện video giới thiệu.|
-| Hồ Đức Mạnh          | Hỗ trợ bài tập lớn       |
-| Nguyễn Đức Kiên      | Thiết kế slide PowerPoint, hỗ trợ bài tập lớn.  |
+| Hồ Đức Mạnh          | Hỗ trợ bài tập lớn, biên soạn tài liệu Overleaf       |
+| Nguyễn Đức Kiên      | Thiết kế slide PowerPoint, hỗ trợ bài tập lớn, biên soạn tài liệu Overleaf  |
 | Nguyễn Thị Mai Hương | Biên soạn tài liệu Overleaf, Poster, Powerpoint, thuyết trình, đề xuất cải tiến, và hỗ trợ bài tập lớn.|
 
 © 2025 NHÓM 7, CNTT16-05, TRƯỜNG ĐẠI HỌC ĐẠI NAM
