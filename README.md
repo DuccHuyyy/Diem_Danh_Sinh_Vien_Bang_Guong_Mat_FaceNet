@@ -115,7 +115,7 @@ Cài đặt các thư viện bằng lệnh:
 ## 🧮 Hướng dẫn kết nối camera IP tới máy tính
 
 ### 🔌 Kết nối phần cứng:
-<img src="images/system_architecture.png" alt="System Architecture" width="800"/>
+<img src="images/camera" alt="System Architecture" width="800"/>
 
 ### ⛓️‍💥 Hướng dẫn kết nối:
 
