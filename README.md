@@ -40,12 +40,9 @@ HỆ THỐNG QUẢN LÝ VÀ ĐIỂM DANH SINH VIÊN </h1>
 
 📦 BTL_IOT
 
-├── 📂 face-recognition-attendance       # Hệ thống điểm danh nhận diện khuôn mặt
-
-│   ├── 📂 backend                        # Backend xử lý dữ liệu và logic
-
-│   │   ├── 📂 dataset                    # Dữ liệu khuôn mặt sinh viên
-
+├── 📂 face-recognition-attendance       # Hệ thống điểm danh nhận diện khuôn mặt 
+│   ├── 📂 backend                        # Backend xử lý dữ liệu và logic 
+│   │   ├── 📂 dataset                    # Dữ liệu khuôn mặt sinh viên 
 │   │   │   ├── CNTT 16-05/
 
 │   │   │   ├── HAN 16-03/
