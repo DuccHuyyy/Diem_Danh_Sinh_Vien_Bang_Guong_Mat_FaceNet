@@ -40,58 +40,53 @@ HỆ THỐNG QUẢN LÝ VÀ ĐIỂM DANH SINH VIÊN </h1>
 
 📦 BTL_IOT
 
-├── 📂 face-recognition-attendance       # Hệ thống điểm danh nhận diện khuôn mặt 
+├── 📂 face-recognition-attendance       # Hệ thống điểm danh dựa trên nhận diện khuôn mặt 
 
 │   ├── 📂 backend                        # Backend xử lý dữ liệu và logic 
 
-│   │   ├── 📂 dataset                    # Dữ liệu khuôn mặt sinh viên 
-│   │   │   ├── CNTT 16-05/
-
-│   │   │   ├── HAN 16-03/
+│   │   ├── 📂 dataset                    # Dữ liệu khuôn mặt của sinh viên 
+│   │   │   ├── CNTT_16-05/              # Dữ liệu sinh viên CNTT - lớp 16-05
+│   │   │   ├── HAN_16-03/                # Dữ liệu sinh viên HAN - lớp 16-03
 
 │   │   ├── 📂 sound                      # Âm thanh thông báo điểm danh
 
-│   │   ├── app.py                        # API backend chính
+│   │   ├── app.py                       # API backend chính
 
-│   │   ├── temp.jpg                       # Ảnh tạm lưu xử lý nhận diện
+│   │   ├── temp.jpg                     # Ảnh tạm lưu trong quá trình nhận diện
 
 │   │
 
-│   ├── 📂 frontend                        # Giao diện người dùng (React)
+│   ├── 📂 frontend                       # Giao diện người dùng (React)
 
-│   │   ├── 📂 node_modules                # Thư viện phụ thuộc frontend
+│   │   ├── 📂 node_modules               # Thư viện phụ thuộc cho frontend
 
-│   │   ├── 📂 public                      # Tệp tĩnh của ứng dụng
+│   │   ├── 📂 public                     # Tệp tĩnh của ứng dụng
 
-│   │   ├── 📂 src                         # Source code frontend
+│   │   ├── 📂 src                        # Mã nguồn frontend
 
-│   │   │   ├── 📂 components              # Các component React
+│   │   │   ├── 📂 components             # Các component của React
 
-│   │   │   │   ├── DsDiemDanh.js          # Danh sách điểm danh
+│   │   │   │   ├── DsDiemDanh.js        # Component hiển thị danh sách điểm danh
 
-│   │   │   │   ├── StudentList.js         # Danh sách sinh viên
+│   │   │   │   ├── StudentList.js       # Component hiển thị danh sách sinh viên
 
-│   │   │   │   ├── CameraComponent.js     # Xử lý camera
+│   │   │   │   ├── CameraComponent.js    # Component xử lý camera
 
-│   │   │   │   ├── ManageStudents.js      # Quản lý sinh viên
+│   │   │   │   ├── ManageStudents.js     # Component quản lý sinh viên
 
-│   │   │   ├── App.js                     # Component chính của ứng dụng
+│   │   │   ├── App.js                    # Component chính của ứng dụng
 
-│   │   │   ├── index.js                   # Điểm vào chính của ứng dụng React
+│   │   │   ├── index.js                  # Điểm vào chính của ứng dụng React
 
-│   │   │   ├── setupTests.js              # Cấu hình kiểm thử
+│   │   │   ├── setupTests.js             # Cấu hình kiểm thử
 
-│   │   ├── package.json                    # Dependencies frontend
+│   │   ├── package.json                  # Thông tin về các dependencies của frontend
 
-│   │   ├── package-lock.json               # Khóa phiên bản dependencies
+│   │   ├── package-lock.json             # Tệp khóa phiên bản cho các dependencies
 
-│
+├── 📂 venv                               # Môi trường ảo Python
 
-├── 📂 venv                                # Môi trường ảo Python
-
-├── 📄 package.json                         # Thông tin dependencies chung
-
-
+├── 📄 package.json                       # Thông tin về các dependencies chung
 
 ---
 
@@ -102,17 +97,18 @@ HỆ THỐNG QUẢN LÝ VÀ ĐIỂM DANH SINH VIÊN </h1>
 <div align="center">
 
 ### 📡 Phần cứng
-[![Arduino](https://img.shields.io/badge/Arduino-00979D?style=for-the-badge&logo=arduino&logoColor=white)](https://www.arduino.cc/)
-[![LED](https://img.shields.io/badge/LED-green?style=for-the-badge)]()
-[![Buzzer](https://img.shields.io/badge/Buzzer-red?style=for-the-badge)]()
-[![WiFi](https://img.shields.io/badge/WiFi-2.4GHz-orange?style=for-the-badge)]()
+[![Webcam](https://img.shields.io/badge/Webcam-000000?style=for-the-badge)](https://www.logitech.com/en-us/products/webcams)
+[![MTCNN](https://img.shields.io/badge/MTCNN-00979D?style=for-the-badge)](https://github.com/ipazc/mtcnn)
+[![DeepFace](https://img.shields.io/badge/DeepFace-FF5722?style=for-the-badge)](https://github.com/serengil/deepface)
 
 ### 🖥️ Phần mềm
 [![Python](https://img.shields.io/badge/Python-3.x-blue?style=for-the-badge&logo=python)]()
-[![MongoDB](https://img.shields.io/badge/MongoDB-4.x-green?style=for-the-badge&logo=mongodb)]()
 [![Flask](https://img.shields.io/badge/Flask-Framework-black?style=for-the-badge&logo=flask)]()
-[![Tkinter](https://img.shields.io/badge/Tkinter-GUI-yellow?style=for-the-badge)]()
 [![OpenCV](https://img.shields.io/badge/OpenCV-Computer%20Vision-blue?style=for-the-badge)]()
+[![MongoDB](https://img.shields.io/badge/MongoDB-4.x-green?style=for-the-badge&logo=mongodb)]()
+[![React](https://img.shields.io/badge/React-17.0.2-blue?style=for-the-badge&logo=react)]()
+[![axios](https://img.shields.io/badge/axios-0.21.1-orange?style=for-the-badge)]()
+[![CORS](https://img.shields.io/badge/CORS-4.x-black?style=for-the-badge)]()
 
 </div>
 
