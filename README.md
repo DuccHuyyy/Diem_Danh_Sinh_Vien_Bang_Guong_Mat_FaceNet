@@ -24,10 +24,12 @@ HỆ THỐNG QUẢN LÝ VÀ ĐIỂM DANH SINH VIÊN </h1>
 
 ## 🌟 Giới thiệu
 
-- **📌 Điểm danh tự động:** Sinh viên quét mã QR để điểm danh. Hệ thống xác định điểm danh đúng hạn hay trễ qua khoảng thời gian quét.
-- **💡 Thông báo trực quan:** Arduino sẽ điều khiển LED (xanh/đỏ) và còi để thông báo kết quả điểm danh. Nếu điểm danh trễ, hệ thống phát thông báo qua loa máy tính.
-- **📊 Quản lý dữ liệu:** Dữ liệu điểm danh được lưu trong MongoDB, có thể xem lịch sử và xuất ra file CSV.
-- **🖥️ Giao diện thân thiện:** Sử dụng Tkinter cho giao diện quản lý và Flask cho xử lý điểm danh qua web.
+- **📌 Điểm danh tự động:** Hệ thống sử dụng camera để quét khuôn mặt sinh viên và tự động điểm danh khi khuôn mặt được nhận diện. Hệ thống cho phép điểm danh ngay khi sinh viên ngồi trong lớp học.
+- **💡 Thông báo trực quan:** Khi sinh viên được điểm danh, hệ thống sẽ hiển thị thông báo trên giao diện người dùng. Nếu có trường hợp không nhận diện được khuôn mặt, thông báo lỗi sẽ được hiển thị.
+- **📊 Quản lý dữ liệu:** Dữ liệu điểm danh và thông tin sinh viên được lưu trữ trong SQL Server. Hệ thống cho phép xem danh sách sinh viên, danh sách lớp học, và lịch sử điểm danh.
+- **🖥️ Giao diện thân thiện:** Sử dụng React cho giao diện người dùng với webcam để quét khuôn mặt, và Flask cho backend xử lý điểm danh cũng như lưu dữ liệu. Giao diện người dùng được thiết kế đơn giản và dễ sử dụng.
+- **🔍 Phát hiện khuôn mặt:** Sử dụng thư viện MTCNN để phát hiện khuôn mặt và DeepFace để xác thực các khuôn mặt so với cơ sở dữ liệu đã lưu trữ.
+- **🎨 Cải thiện hình ảnh:** Hệ thống cải thiện chất lượng hình ảnh trước khi xác thực bằng các kỹ thuật như tăng độ nét và điều chỉnh độ sáng.
 
 ---
 ## 🏗️ HỆ THỐNG
@@ -74,129 +76,207 @@ HỆ THỐNG QUẢN LÝ VÀ ĐIỂM DANH SINH VIÊN </h1>
 <div align="center">
 
 ### 📡 Phần cứng
-[![Webcam](https://img.shields.io/badge/Webcam-000000?style=for-the-badge)](https://www.logitech.com/en-us/products/webcams)
+[![CameraIP](https://img.shields.io/badge/Webcam-000000?style=for-the-badge)](https://www.logitech.com/en-us/products/webcams)
 [![MTCNN](https://img.shields.io/badge/MTCNN-00979D?style=for-the-badge)](https://github.com/ipazc/mtcnn)
 [![DeepFace](https://img.shields.io/badge/DeepFace-FF5722?style=for-the-badge)](https://github.com/serengil/deepface)
 
 ### 🖥️ Phần mềm
 [![Python](https://img.shields.io/badge/Python-3.x-blue?style=for-the-badge&logo=python)]()
-[![Flask](https://img.shields.io/badge/Flask-Framework-black?style=for-the-badge&logo=flask)]()
-[![OpenCV](https://img.shields.io/badge/OpenCV-Computer%20Vision-blue?style=for-the-badge)]()
-[![MongoDB](https://img.shields.io/badge/MongoDB-4.x-green?style=for-the-badge&logo=mongodb)]()
+[![Flask](https://img.shields.io/badge/Flask-v2.0.1-black?style=for-the-badge&logo=flask)]()
+[![OpenCV](https://img.shields.io/badge/OpenCV-4.x-blue?style=for-the-badge)]()
+[![pyodbc](https://img.shields.io/badge/pyodbc-4.x-green?style=for-the-badge&logo=python)]()
 [![React](https://img.shields.io/badge/React-17.0.2-blue?style=for-the-badge&logo=react)]()
 [![axios](https://img.shields.io/badge/axios-0.21.1-orange?style=for-the-badge)]()
 [![CORS](https://img.shields.io/badge/CORS-4.x-black?style=for-the-badge)]()
+[![NumPy](https://img.shields.io/badge/NumPy-1.x-red?style=for-the-badge&logo=numpy)]()
+[![pandas](https://img.shields.io/badge/pandas-1.x-purple?style=for-the-badge&logo=pandas)]()
+[![datetime](https://img.shields.io/badge/datetime-bd6638?style=for-the-badge)]()
 
 </div>
 
 ## 🛠️ Yêu cầu hệ thống
 
 ### 🔌 Phần cứng
-- **Arduino Uno** (hoặc board tương thích) với **LED (2 màu) và còi**.
-- **Cáp USB** để kết nối Arduino với máy tính.
-- ⚠️ **Lưu ý:** Mặc định mã nguồn Arduino trong `ThongBao.ino` sử dụng cổng `COM5`. Nếu Arduino của bạn sử dụng cổng khác, hãy thay đổi biến `SERIAL_PORT` trong `chuongTrinh.py`.
+- **Camera IP** (ví dụ: camera an ninh Wi-Fi hoặc camera USB).
+- **Cáp mạng** (nếu sử dụng camera IP qua cổng mạng).
+- **Máy tính** để chạy ứng dụng điểm danh.
+- ⚠️ **Lưu ý:** Đảm bảo camera IP đã được cấu hình đúng để có thể kết nối với mạng nội bộ.
 
 ### 💻 Phần mềm
 - **🐍 Python 3+**
 - **🍃 MongoDB** (kết nối mặc định: `mongodb://localhost:27017/`)
-- **⚡ Arduino IDE** để nạp file `ThongBao.ino` lên board Arduino.
+- **⚡ Thư viện OpenCV** để xử lý hình ảnh từ camera.
 
 ### 📦 Các thư viện Python cần thiết
 Cài đặt các thư viện bằng lệnh:
 
-    pip install pillow qrcode pymongo tkcalendar flask pyserial gtts pygame
-## 🧮 Bảng mạch
+    pip install opencv-python Flask Flask-Cors numpy
 
-### 🔩 Kết nối phần cứng:
-<img src="images/mohinhfacenet.png" alt="System Architecture" width="800"/>
+## 🧮 Hướng dẫn kết nối camera IP tới máy tính
 
-### ⛓️‍💥 Hướng dẫn cắm dây
-| Thiết bị        | Chân trên thiết bị | Kết nối Arduino UNO | Ghi chú                         |
-|-----------------|-------------------|---------------------|---------------------------------|
-| Breadboard      | -                 | -                   | Dùng để kết nối linh kiện       |
-| Đèn LED xanh    | Anode (+), Cathode (-) | Anode → Digital Pin 9, Cathode → GND | Led thông báo khi sinh viên điểm danh đúng giờ|
-| Đèn LED đỏ      | Anode (+), Cathode (-) | Anode → Digital Pin 10, Cathode → GND | Led thông báo khi sinh viên điểm danh muộn|
-| Buzzer         | (+), (-)            | (+) → Digital Pin 11, (-) → GND |Còi thông báo khi sinh viên điểm danh muộn|
-| 7 dây điện      | -                 | -                   | Dùng để nối các linh kiện       |
+### 🔌 Kết nối phần cứng:
+<img src="images/system_architecture.png" alt="System Architecture" width="800"/>
 
+### ⛓️‍💥 Hướng dẫn kết nối:
+
+1. **Cài đặt Camera IP:**
+   - Kết nối camera IP vào nguồn điện và vào mạng Wi-Fi.
+   - Sử dụng ứng dụng hoặc phần mềm đi kèm với camera để cấu hình camera và đặt thông tin mạng (SSID, mật khẩu Wi-Fi).
+
+2. **Lấy địa chỉ IP của Camera:**
+   - Sau khi cấu hình, kiểm tra địa chỉ IP đã được gán cho camera. Đây có thể là địa chỉ như `http://192.168.1.100`.
+   - Đảm bảo camera hoạt động và có thể truy cập thông qua địa chỉ IP trên trình duyệt.
+
+3. **Kết nối tới máy tính:**
+   - Mở ứng dụng Python trên máy tính.
+   - Sử dụng địa chỉ IP đã lấy để thiết lập kết nối trong ứng dụng Flask.
+
+4. **Kiểm tra kết nối:**
+   - Sử dụng OpenCV để lấy video stream từ camera:
+     ```python
+     import cv2
+
+     camera_ip = 'http://127.0.0.1:5000/detect'  # Thay đổi địa chỉ IP theo camera của bạn
+     cap = cv2.VideoCapture(camera_ip)
+
+     while True:
+         ret, frame = cap.read()
+         if not ret:
+             break
+         cv2.imshow('Camera Feed', frame)
+         if cv2.waitKey(1) & 0xFF == ord('q'):
+             break
+
+     cap.release()
+     cv2.destroyAllWindows()
+     ```
+
+### ⚠️ Lưu ý:
+- Đảm bảo firewall trên máy tính không chặn kết nối đến địa chỉ IP của camera.
+- Camera IP và máy tính nên nằm trên cùng một mạng nội bộ để đảm bảo việc truy cập và xử lý hình ảnh hiệu quả.
 ## 🚀 Hướng dẫn cài đặt và chạy
-1️⃣ Chuẩn bị phần cứng
-- **Nạp mã Arduino**:
 
-    1. Mở file `ThongBao.ino` bằng Arduino IDE.
-    2. Kết nối board Arduino với máy tính.
-    3. Nạp (upload) mã nguồn lên board.
-    4. Đảm bảo Arduino xuất hiện trên cổng COM5 (hoặc thay đổi trong `chuongTrinh.py` nếu cổng khác COM5).
+1️⃣ **Chuẩn bị phần mềm**
 
-2️⃣ Cài đặt thư viện Python. 
+- **Cài đặt Node.js**: Nếu chưa có, hãy tải và cài đặt [Node.js](https://nodejs.org/) từ trang chính thức. Điều này sẽ bao gồm npm (Node Package Manager) để quản lý các thư viện cần thiết.
 
-Cài đặt Python 3 nếu chưa có, sau đó cài đặt các thư viện cần thiết bằng pip.
+- **Cài đặt Python 3**: Cài đặt Python 3 nếu chưa có. Đảm bảo thêm Python vào PATH khi cài đặt.
 
-3️⃣ Cấu hình MongoDB
-- Cài đặt MongoDB nếu chưa có.
-- Khởi động MongoDB và đảm bảo đang hoạt động tại `mongodb://localhost:27017/`.
-- Khôi phục cơ sở dữ liệu từ bản sao lưu:
+- **Cài đặt SQL Server**: Đảm bảo bạn có một cơ sở dữ liệu SQL Server để lưu trữ thông tin sinh viên và điểm danh.
 
-        mongorestore --db AttendanceDB "đường-dẫn-đến-thư-mục-AttendanceDB"
-- Ví dụ:
+2️⃣ **Cài đặt thư viện cho React**: 
 
-        mongorestore --db AttendanceDB "C:\Users\LENOVO\Documents\Demo2QR\AttendanceDB"
-📌 Lưu ý:
--	Tránh trùng lặp cơ sở dữ liệu: Trước khi thực hiện restore, hãy kiểm tra xem MongoDB đã có cơ sở dữ liệu tên AttendanceDB chưa. Nếu có, bạn có thể gặp lỗi hoặc dữ liệu cũ có thể bị ghi đè.
--	Đảm bảo MongoDB đang chạy: Nếu MongoDB chưa được khởi động, lệnh mongorestore sẽ không hoạt động.
+- Tạo một thư mục cho dự án React và chuyển vào thư mục đó:
 
-4️⃣ Chạy các chương trình
+    ```bash
+    mkdir attendance-app
+    cd attendance-app
+    ```
 
-Để đảm bảo hệ thống hoạt động đúng cách, bạn cần khởi chạy `chuongTrinh.py` trước, thay vì chạy từng file con riêng lẻ. File này cung cấp giao diện chính và bao gồm logic kết nối với Arduino board. Nếu chạy trực tiếp các file con, việc kết nối với Arduino sẽ không hoạt động.
+- Khởi tạo ứng dụng React:
 
-✅ Chạy ứng dụng chính (`chuongTrinh.py`):
+    ```bash
+    npx create-react-app .
+    ```
 
-    python chuongTrinh.py
-- Ứng dụng sẽ:
+- Cài đặt các thư viện cần thiết cho ứng dụng React:
 
-    - Khởi động **LED Service** tại `localhost:6000` để điều khiển LED và còi.
-    - Hiển thị giao diện chính (Tkinter) với các nút: **Tạo mã QR** và **Xem điểm danh**
+    ```bash
+    npm install axios react-webcam
+    ```
 
-✅ Chạy ứng dụng quản lý điểm danh (`Diemdanh.py`):
+3️⃣ **Cài đặt thư viện cho Flask**:
 
-    python Diemdanh.py
+- Mở một terminal mới và cài đặt các thư viện cần thiết cho Flask:
 
-✅ Chạy ứng dụng tạo mã QR (`TaoQR.py`):
+    ```bash
+    pip install flask flask-cors deepface mtcnn pyodbc opencv-python numpy
+    ```
 
-    python TaoQR.py
+4️⃣ **Cấu hình cơ sở dữ liệu**
+
+- Đảm bảo bạn đã tạo cơ sở dữ liệu `DiemdanhHS` trong SQL Server. Bạn có thể cần tạo bảng và nhập dữ liệu cần thiết theo mô hình mà ứng dụng sử dụng.
+
+5️⃣ **Chạy ứng dụng Flask API**
+
+- Mở terminal nơi bạn đã lưu mã nguồn cho Flask, chuyển vào thư mục chứa file `app.py`.
+
+- Chạy ứng dụng Flask:
+
+    ```bash
+    python app.py
+    ```
+
+- Mặc định, Flask sẽ khởi động server trên `http://127.0.0.1:5000`.
+
+6️⃣ **Chạy ứng dụng React**
+
+- Quay trở lại terminal nơi bạn đã cài đặt ứng dụng React, sử dụng lệnh sau để khởi động server React:
+
+    ```bash
+    npm start
+    ```
+
+- Mặc định, ứng dụng sẽ mở trên `http://localhost:3000`.
+
+7️⃣ **Sử dụng ứng dụng**
+
+- Mở trình duyệt và vào địa chỉ `http://localhost:3000`.
+- Bạn sẽ thấy giao diện của ứng dụng cho phép thực hiện điểm danh tự động bằng cách sử dụng camera.
+
+📌 **Lưu ý:**
+
+- Đảm bảo rằng camera của bạn đã được cấp quyền truy cập.
+- Nếu gặp lỗi về kết nối cơ sở dữ liệu, hãy kiểm tra lại chuỗi kết nối trong mã Flask để đảm bảo rằng nó chính xác.
+- Kiểm tra các đường dẫn API trong ứng dụng React để đảm bảo chúng phù hợp với cấu hình API của bạn.
+
+Với hướng dẫn này, bạn sẽ có thể cài đặt và chạy cả ứng dụng dựa trên React và API Flask cho hệ thống điểm danh tự động.
 
 ## 📖 Hướng dẫn sử dụng
-1️⃣ Điểm danh qua QR code
 
-- Sinh viên nhận email chứa mã QR.
-- Khi quét mã, trình duyệt sẽ gửi yêu cầu điểm danh đến Flask server.
-- Hệ thống kiểm tra tính hợp lệ và cập nhật vào MongoDB, đồng thời điều khiển Arduino:
-    - ✅ Điểm danh đúng hạn → LED xanh.
-    - ⏳ Điểm danh trễ → LED đỏ, còi, phát thông báo.
-    
-2️⃣ Quản lý sinh viên & mã QR
-- Qua giao diện của TaoQR.py, bạn có thể:
+1️⃣ **Điểm danh tự động qua camera**
+
+- Sinh viên sử dụng camera để chụp hình khuôn mặt.
+- Hệ thống nhận diện khuôn mặt sẽ gửi yêu cầu đến Flask server để điểm danh.
+- Nếu nhận diện thành công, thông tin sẽ được lưu vào cơ sở dữ liệu và hiển thị thông báo thành công.
+
+2️⃣ **Quản lý sinh viên**
+- Qua giao diện quản lý, bạn có thể:
     - Thêm, sửa, xóa thông tin sinh viên.
-    - Nhập/xuất danh sách sinh viên từ/đến file CSV.
-    - Tạo QR cho sinh viên theo lớp hoặc toàn bộ sinh viên.
-    - Xóa mã QR cũ một cách thủ công.
+    - Xem và tìm kiếm danh sách sinh viên theo tên hoặc lớp học.
+    - Xem lịch sử điểm danh của sinh viên.
 
-3️⃣ Xem lịch sử điểm danh
-- Qua giao diện của Diemdanh.py, bạn có thể:
-    - Lọc danh sách điểm danh theo ngày, lớp, trạng thái.
-    - Xuất dữ liệu điểm danh ra file CSV.
-    - Hệ thống tự động cập nhật và chốt các phiên điểm danh.
+3️⃣ **Xem lịch sử điểm danh**
+- Xem danh sách điểm danh gần đây với thông tin về sinh viên, lớp học, thời gian điểm danh và chức vụ.
+- Hỗ trợ tìm kiếm theo ngày để xem các bản ghi điểm danh trong khoảng thời gian nhất định.
 
 ## ⚙️ Cấu hình & Ghi chú
 
-1. Cổng Arduino: 
-- Mặc định sử dụng COM5, có thể cập nhật trong `chuongTrinh.py`.
-2. Email gửi mã QR:
-- Trong `TaoQR.py`, cập nhật thông tin *sender_email* và *sender_password*.(sender email là địa chỉ email gửi, sender password là mật khẩu ứng dụng của email đó.)
-3. Thời gian hiệu lực mã QR: 
-- Mã QR có hiệu lực 100 phút kể từ thời điểm tạo.
-4. Môi trường mạng: 
-- Thiết bị quét QR cần kết nối cùng mạng với máy chủ.
+1. **Cấu hình cơ sở dữ liệu**:
+   - Trong mã nguồn Flask, hãy cập nhật chuỗi kết nối SQL Server trong hàm `get_db_connection()` để đảm bảo kết nối đúng đến cơ sở dữ liệu `DiemdanhHS`.
+   - Kiểm tra rằng bảng `Users`, `Faces`, và `Attendance` đã tồn tại trong cơ sở dữ liệu với các trường dữ liệu cần thiết.
+
+2. **Cấu hình camera**:
+   - Đảm bảo camera của thiết bị đã được kết nối và cấp quyền truy cập cho ứng dụng. Bạn có thể sử dụng webcam của máy tính để thực hiện điểm danh.
+
+3. **Cài đặt các thư viện cần thiết**:
+   - Cài đặt các thư viện Python cần thiết: `flask`, `deepface`, `mtcnn`, `pyodbc`, và `opencv-python`. Bạn có thể cài đặt chúng thông qua pip:
+     ```bash
+     pip install flask deepface mtcnn pyodbc opencv-python
+     ```
+
+4. **Hỗ trợ CORS**:
+   - Ứng dụng Flask đã được cấu hình để hỗ trợ CORS, vì vậy bạn có thể gọi từ ứng dụng front-end mà không bị vấn đề với chính sách bảo mật.
+
+5. **Môi trường mạng**:
+   - Đảm bảo các thiết bị mà bạn sử dụng để quét khuôn mặt và chạy server Flask đều kết nối trên cùng một mạng nội bộ để đảm bảo chức năng hoạt động.
+
+6. **Xử lý thông báo và lỗi**:
+   - Ứng dụng sử dụng logging để ghi lại các thông báo và lỗi. Bạn có thể theo dõi console của server để những thông tin này.
+
+---
+
+Với hướng dẫn này, bạn có thể sử dụng và cấu hình hệ thống điểm danh tự động dựa trên nhận diện khuôn mặt một cách hiệu quả. Nếu có bất kỳ vấn đề gì, hãy kiểm tra lại kết nối cơ sở dữ liệu và các thư viện đã được cài đặt.
 
 ## 📰 Poster
 <p align="center">
