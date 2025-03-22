@@ -188,11 +188,11 @@ Cài đặt Python 3 nếu chưa có, sau đó cài đặt các thư viện cầ
 ## 🤝 Đóng góp
 Dự án được phát triển bởi 4 thành viên:
 
-| Họ và Tên       | Vai trò                  |
-|-----------------|--------------------------|
-| Nguyễn Nam Hưng | Phát triển toàn bộ mã nguồn, thiết kế cơ sở dữ liệu, kiểm thử, triển khai dự án và thực hiện video giới thiệu.|
-| Hoàng Mạnh Linh | Biên soạn tài liệu Overleaf, Poster, Powerpoint, thuyết trình, đề xuất cải tiến, và hỗ trợ bài tập lớn.|
-| Đào Đức Mạnh    | Thiết kế slide PowerPoint, hỗ trợ bài tập lớn.  |
-| Cao Văn Huy     | Hỗ trợ bài tập lớn       |
+| Họ và Tên            | Vai trò                  |
+|----------------------|--------------------------|
+| Chu Văn Huy          | Phát triển toàn bộ mã nguồn, thiết kế cơ sở dữ liệu, kiểm thử, triển khai dự án và thực hiện video giới thiệu.|
+| Hồ Đức Mạnh          | Hỗ trợ bài tập lớn       |
+| Nguyễn Đức Kiên      | Thiết kế slide PowerPoint, hỗ trợ bài tập lớn.  |
+| Nguyễn Thị Mai Hương | Biên soạn tài liệu Overleaf, Poster, Powerpoint, thuyết trình, đề xuất cải tiến, và hỗ trợ bài tập lớn.|
 
-© 2025 NHÓM 1, CNTT16-03, TRƯỜNG ĐẠI HỌC ĐẠI NAM
+© 2025 NHÓM 7, CNTT16-05, TRƯỜNG ĐẠI HỌC ĐẠI NAM
