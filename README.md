@@ -1,5 +1,5 @@
-<h1 align="center">ỨNG DỤNG MÃ QR TRONG 
-HỆ THỐNG ĐIỂM DANH SINH VIÊN </h1>
+<h1 align="center">ỨNG DỤNG CÔNG NGHỆ TRONG 
+HỆ THỐNG QUẢN LÝ VÀ ĐIỂM DANH SINH VIÊN </h1>
 
 <div align="center">
 
@@ -14,7 +14,7 @@ HỆ THỐNG ĐIỂM DANH SINH VIÊN </h1>
 
 </div>
 
-<h2 align="center">Hệ thống điểm danh sinh viên bằng mã QR</h2>
+<h2 align="center">Ứng dụng công nghệ trong hệ thống quản lý và điểm danh sinh viên</h2>
 
 <p align="left">
   Hệ thống điểm danh sinh viên bằng mã QR là một dự án tích hợp giữa phần cứng (Arduino) và phần mềm (Python) nhằm tự động hóa quá trình điểm danh. Dự án sử dụng mã QR để cho phép sinh viên điểm danh, đồng thời kết hợp với thông báo qua LED, còi và giọng nói để phản hồi kết quả điểm danh. Dữ liệu điểm danh được lưu trữ trong MongoDB và quản lý qua giao diện người dùng được xây dựng bằng Tkinter.
@@ -32,7 +32,7 @@ HỆ THỐNG ĐIỂM DANH SINH VIÊN </h1>
 ---
 ## 🏗️ HỆ THỐNG
 <p align="center">
-  <img src="images/Quytrinhdiemdanh.png" alt="System Architecture" width="800"/>
+  <img src="images/sodohethong.png" alt="System Architecture" width="800"/>
 </p>
 
 ---
@@ -90,7 +90,7 @@ Cài đặt các thư viện bằng lệnh:
 ## 🧮 Bảng mạch
 
 ### 🔩 Kết nối phần cứng:
-<img src="images/Ketnoiphancung.png" alt="System Architecture" width="800"/>
+<img src="images/mohinhfacenet.png" alt="System Architecture" width="800"/>
 
 ### ⛓️‍💥 Hướng dẫn cắm dây
 | Thiết bị        | Chân trên thiết bị | Kết nối Arduino UNO | Ghi chú                         |
@@ -182,7 +182,7 @@ Cài đặt Python 3 nếu chưa có, sau đó cài đặt các thư viện cầ
 
 ## 📰 Poster
 <p align="center">
-  <img src="images/PosterNhom1.png" alt="System Architecture" width="800"/>
+  <img src="images/Nhóm-7-Poster.png" alt="System Architecture" width="800"/>
 </p>
 
 ## 🤝 Đóng góp
